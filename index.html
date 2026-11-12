@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RENESANS O'quv Markazi - CRM & Boshqaruv Tizimi</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap"
+        rel="stylesheet">
+    <!-- FontAwesome for high-quality icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="theme-light">
+    <!-- App Container -->
+    <div id="app" class="app-layout">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo-box">
+                    <div class="logo-icon">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <div class="logo-text">
+                        <h2>RENESANS</h2>
+                        <span>O'QUV MARKAZI</span>
+                    </div>
+                </div>
+                <button class="mobile-close-btn" id="mobileSidebarClose" title="Yopish">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <!-- Role Badge in Sidebar -->
+            <div class="active-role-card">
+                <div class="role-avatar" id="sidebarRoleAvatar">
+                    <i class="fa-solid fa-user-shield"></i>
+                </div>
+                <div class="role-details">
+                    <span class="role-label">Joriy Panel:</span>
+                    <h4 id="sidebarRoleName">Bosh Admin</h4>
+                </div>
+                <span class="role-status-dot online"></span>
+            </div>
+
+            <!-- Navigation Links -->
+            <nav class="sidebar-nav" id="sidebarNav">
+                <!-- Dynamically populated based on active role -->
+            </nav>
+
+            <!-- Sidebar Footer -->
+            <div class="sidebar-footer">
+                <div class="quick-stat-box">
+                    <div class="stat-mini">
+                        <span class="mini-label">O'quvchilar:</span>
+                        <strong id="miniStudentCount">0</strong>
+                    </div>
+                    <div class="stat-mini">
+                        <span class="mini-label">Guruhlar:</span>
+                        <strong id="miniGroupCount">0</strong>
+                    </div>
+                </div>
+                <button class="btn-reset-data" id="btnResetDemoData" title="Boshlang'ich test ma'lumotlarini tiklash">
+                    <i class="fa-solid fa-rotate-left"></i> <span>Demo ma'lumotlarni tiklash</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- MAIN CONTENT AREA -->
+        <div class="main-wrapper">
+            <!-- TOP NAVBAR -->
+            <header class="topbar">
+                <div class="topbar-left">
+                    <button class="menu-toggle" id="sidebarToggle" title="Menyuni ochish/yopish">
+                        <i class="fa-solid fa-bars-staggered"></i>
+                    </button>
+                    <div class="page-title-area">
+                        <h1 id="pageMainHeading">Boshqaruv Paneli</h1>
+                        <p id="pageSubHeading">Bugungi ko'rsatkichlar va tezkor monitoring</p>
+                    </div>
+                </div>
+
+                <div class="topbar-right">
+                    <!-- Global Search -->
+                    <div class="topbar-search">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="text" id="globalSearchInput"
+                            placeholder="O'quvchi, o'qituvchi, telefon raqam qidirish...">
+                    </div>
+
+                    <!-- Role Selector (ADMIN / MENAJER / O'QITUVCHI) -->
+                    <div class="role-switcher-container">
+                        <span class="switcher-label"><i class="fa-solid fa-arrows-spin"></i> Rolni almashtirish:</span>
+                        <div class="role-switcher-buttons" id="roleSwitcher">
+                            <button class="role-btn active" data-role="admin">
+                                <i class="fa-solid fa-user-shield"></i> Admin
+                            </button>
+                            <button class="role-btn" data-role="manager">
+                                <i class="fa-solid fa-chart-pie"></i> Menijer
+                            </button>
+                            <button class="role-btn" data-role="teacher">
+                                <i class="fa-solid fa-chalkboard-user"></i> O'qituvchi
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Date & Actions -->
+                    <div class="date-badge" id="currentDateDisplay">
+                        <i class="fa-regular fa-calendar-days"></i>
+                        <span id="dateText">2-Noyabr, 2026</span>
+                    </div>
+
+                    <button class="theme-toggle" id="themeToggleBtn" title="Mavzuni o'zgartirish">
+                        <i class="fa-solid fa-moon"></i>
+                    </button>
+                </div>
+            </header>
+
+            <!-- VIEW CONTAINER -->
+            <main class="content-view" id="contentView">
+                <!-- Injected via JavaScript based on role & selected section -->
+            </main>
+        </div>
+    </div>
+
+    <!-- GLOBAL MODALS CONTAINER -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-card" id="modalCard">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h3 id="modalTitle">Modal Sarlavhasi</h3>
+                <button class="modal-close-btn" id="modalCloseBtn">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <!-- Modal Body -->
+            <div class="modal-body" id="modalBody">
+                <!-- Dynamically loaded forms -->
+            </div>
+        </div>
+    </div>
+
+    <!-- TOAST NOTIFICATIONS -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- Core Scripts -->
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
