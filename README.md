@@ -63,3 +63,4 @@ Loyihaning `index.html` faylini istalgan brauzerda (Chrome, Edge, Firefox) ikki 
 - **Qidiruv tizimi:** O'quvchi, o'qituvchi yoki telefon raqami bo'yicha global tezkor qidiruv;
 - **O'zbek tilida to'liq interfeys:** Barcha so'zlar, xabarlar va valyutalar O'zbekiston sharoitiga moslashtirilgan;
 - **Mobil moslashuvchanlik:** Telefon, planshet va kompyuter ekranlariga to'liq moslashadi.
+# O-quv-markaz
